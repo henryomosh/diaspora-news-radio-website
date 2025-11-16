@@ -16,7 +16,9 @@ export async function DELETE(
 ) {
   try {
     const body = await request.json();
-    const imgUrl1 = String(body?.imageUrl).split("omondi_app_storage/");
+    const imgUrl1 = String(body?.imageUrl).split(
+      `${process.env.GOOGLE_CLOUD_STORAGE_BUCKET}/`
+    );
     const itemId = body?.itemId;
     const type = body?.type;
 

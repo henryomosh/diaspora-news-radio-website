@@ -14,8 +14,7 @@ export async function GET(request: NextRequest) {
   const fileName =
     "user_IMG/2025-11-14/53f1d900-0bc9-4063-a39e-bd47a0476349.jpeg";
   const bucketName: any = process.env.GOOGLE_CLOUD_STORAGE_BUCKET; // Replace with your bucket name
-  const gcsUri =
-    "gs://omondi_app_storage/user_IMG/2025-11-14/53f1d900-0bc9-4063-a39e-bd47a0476349.jpeg";
+  const gcsUri = `gs://${process.env.GOOGLE_CLOUD_STORAGE_BUCKET}/user_IMG/2025-11-14/53f1d900-0bc9-4063-a39e-bd47a0476349.jpeg`;
 
   try {
     const file = storage.bucket(bucketName).file(fileName);
