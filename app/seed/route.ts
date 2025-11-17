@@ -2,11 +2,10 @@ import sql from "@/lib/db";
 import { createAdmin } from "@/lib/auth";
 
 async function seedUsers() {
-  const email = "henryomosh7@gmail.com";
-  const password = "Invalid@68";
-  const name = "Henry Omondi";
+  const email = "diasporanewsradio@admin.com";
+  const password = "admin@2025";
+  const name = "Radio Admin";
   const user = await createAdmin(email, password, name);
-  console.log(user);
 
   // await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
